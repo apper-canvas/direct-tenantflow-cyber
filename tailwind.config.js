@@ -158,7 +158,6 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' }
         },
-},
       spacing: {
         '0.5': '0.125rem',
         '1.5': '0.375rem',

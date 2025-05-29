@@ -52,7 +52,6 @@ const [activeTab, setActiveTab] = useState('dashboard')
         toastClassName="shadow-lg border border-surface-200 dark:border-surface-700"
       />
     </div>
-</div>
   )
 }
 
