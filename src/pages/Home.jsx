@@ -23,7 +23,8 @@ const Home = ({ darkMode, toggleDarkMode }) => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-surface-50 via-white to-surface-100 dark:from-surface-900 dark:via-surface-800 dark:to-surface-900">
+    <div className="min-h-screen content-gradient">
+
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <motion.div
@@ -39,7 +40,8 @@ const Home = ({ darkMode, toggleDarkMode }) => {
       <motion.aside
         initial={false}
         animate={{ x: sidebarOpen ? 0 : '-100%' }}
-        className="fixed top-0 left-0 z-50 w-72 h-full bg-white dark:bg-surface-800 shadow-2xl lg:shadow-neu-light dark:lg:shadow-neu-dark lg:translate-x-0 lg:static lg:z-auto transition-all duration-300"
+        className="fixed top-0 left-0 z-50 w-72 h-full glass-strong lg:shadow-card lg:translate-x-0 lg:static lg:z-auto transition-all duration-300"
+
       >
         <div className="flex items-center justify-between p-6 border-b border-surface-200 dark:border-surface-700">
           <div className="flex items-center space-x-3">
@@ -93,7 +95,8 @@ const Home = ({ darkMode, toggleDarkMode }) => {
       {/* Main Content */}
       <div className="lg:ml-72 min-h-screen">
         {/* Header */}
-        <header className="bg-white dark:bg-surface-800 shadow-sm border-b border-surface-200 dark:border-surface-700 sticky top-0 z-30">
+        <header className="glass-strong shadow-soft border-b border-white/20 dark:border-surface-700/30 sticky top-0 z-30 backdrop-blur-xl">
+
           <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex items-center space-x-4">
               <button
@@ -138,7 +141,8 @@ const Home = ({ darkMode, toggleDarkMode }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="card p-6 hover:shadow-lg transition-shadow"
+                  className="card hover-lift p-6 hover:shadow-card-hover transition-all duration-300 group"
+
                 >
                   <div className="flex items-center justify-between">
                     <div>
@@ -154,7 +158,8 @@ const Home = ({ darkMode, toggleDarkMode }) => {
                         {stat.change} from last month
                       </p>
                     </div>
-                    <div className={`p-3 rounded-xl bg-surface-100 dark:bg-surface-700 ${stat.color}`}>
+                    <div className={`p-3 rounded-xl bg-gradient-to-br from-surface-100 to-surface-200 dark:from-surface-700 dark:to-surface-800 ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
+
                       <ApperIcon name={stat.icon} className="w-6 h-6" />
                     </div>
                   </div>

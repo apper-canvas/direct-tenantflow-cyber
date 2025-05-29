@@ -14,7 +14,8 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-surface-50 to-surface-100 dark:from-surface-900 dark:to-surface-800 transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
+    <div className={`min-h-screen content-gradient transition-all duration-500 ${darkMode ? 'dark' : ''}`}>
+
       <Router>
         <Routes>
           <Route path="/" element={<Home darkMode={darkMode} toggleDarkMode={toggleDarkMode} />} />
