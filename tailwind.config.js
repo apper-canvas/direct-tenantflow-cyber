@@ -158,10 +158,7 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' }
         },
-
-        }
-      }
-      spacing: {
+spacing: {
         '0.5': '0.125rem',
         '1.5': '0.375rem',
         '2.5': '0.625rem',
@@ -197,9 +194,9 @@ export default {
         '136': '34rem',
         '140': '35rem',
         '144': '36rem'
-      },
-
-
+      }
+    }
+  },
   plugins: [],
   darkMode: 'class',
 }
