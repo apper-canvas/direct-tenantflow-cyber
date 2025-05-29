@@ -101,8 +101,9 @@ const Home = ({ darkMode, toggleDarkMode }) => {
       <div className="flex-1 lg:ml-0 min-h-screen">
 
         {/* Header */}
-        <header className="glass-strong shadow-soft border-b border-white/20 dark:border-surface-700/30 sticky top-0 z-30 backdrop-blur-xl">
-<button
+<header className="glass-strong shadow-soft border-b border-white/20 dark:border-surface-700/30 sticky top-0 z-30 backdrop-blur-xl">
+          <div className="flex items-center justify-between px-3 sm:px-4 lg:px-6 py-3">
+            <button
               onClick={() => setSidebarOpen(true)}
               className="lg:hidden p-2 hover:bg-surface-100 dark:hover:bg-surface-700 rounded-lg transition-colors"
             >
@@ -113,7 +114,6 @@ const Home = ({ darkMode, toggleDarkMode }) => {
             </h2>
           </div>
         </header>
-          <div className="flex items-center justify-between px-3 sm:px-4 lg:px-6 py-3">
 
 
         {/* Dashboard Stats */}
