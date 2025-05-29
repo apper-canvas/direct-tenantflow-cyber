@@ -259,7 +259,8 @@ const MainFeature = ({ activeTab }) => {
     switch (activeTab) {
       case 'properties':
         return (
-          <div className="space-y-6">
+          <div className="space-y-4">
+
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <h3 className="text-xl font-semibold text-surface-900 dark:text-white">Property Portfolio</h3>
               <button
@@ -271,7 +272,8 @@ const MainFeature = ({ activeTab }) => {
               </button>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+
               {properties.map((property) => (
                 <motion.div
                   key={property.id}
@@ -298,11 +300,13 @@ const MainFeature = ({ activeTab }) => {
                     </div>
                   </div>
                   
-                  <div className="p-5">
+                  <div className="p-4">
+
                     <h4 className="font-semibold text-surface-900 dark:text-white mb-2 line-clamp-2">
                       {property.address}
                     </h4>
-                    <div className="space-y-2 text-sm text-surface-600 dark:text-surface-400 mb-4">
+                    <div className="space-y-1 text-sm text-surface-600 dark:text-surface-400 mb-3">
+
                       <div className="flex items-center space-x-2">
                         <ApperIcon name="Home" className="w-4 h-4" />
                         <span>{property.type} • {property.units} unit{property.units > 1 ? 's' : ''}</span>
@@ -342,7 +346,8 @@ const MainFeature = ({ activeTab }) => {
 
       case 'tenants':
         return (
-          <div className="space-y-6">
+          <div className="space-y-4">
+
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <h3 className="text-xl font-semibold text-surface-900 dark:text-white">Tenant Management</h3>
               <button
@@ -454,15 +459,18 @@ const MainFeature = ({ activeTab }) => {
               </button>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
               {maintenanceRequests.map((request) => (
                 <motion.div
                   key={request.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="card p-6 hover:shadow-lg transition-all"
+                  className="card p-4 hover:shadow-lg transition-all"
+
                 >
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-start justify-between mb-3">
+
                     <div className="flex-1">
                       <h4 className="font-semibold text-surface-900 dark:text-white mb-1">
                         {request.title}
@@ -484,11 +492,13 @@ const MainFeature = ({ activeTab }) => {
                     </div>
                   </div>
                   
-                  <p className="text-sm text-surface-700 dark:text-surface-300 mb-4">
+                  <p className="text-sm text-surface-700 dark:text-surface-300 mb-3">
+
                     {request.description}
                   </p>
                   
-                  <div className="grid grid-cols-2 gap-4 text-sm text-surface-600 dark:text-surface-400 mb-4">
+                  <div className="grid grid-cols-2 gap-3 text-sm text-surface-600 dark:text-surface-400 mb-3">
+
                     <div>
                       <span className="font-medium">Category:</span> {request.category}
                     </div>
@@ -529,12 +539,17 @@ const MainFeature = ({ activeTab }) => {
 
       default:
         return (
-          <div className="space-y-8">
+          <div className="space-y-6">
+
             {/* Recent Activity */}
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold text-surface-900 dark:text-white mb-4">Recent Activity</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 p-3 bg-surface-50 dark:bg-surface-700 rounded-lg">
+            <div className="card p-4">
+
+              <h3 className="text-lg font-semibold text-surface-900 dark:text-white mb-3">Recent Activity</h3>
+
+              <div className="space-y-3">
+
+                <div className="flex items-center space-x-3 p-2 bg-surface-50 dark:bg-surface-700 rounded-lg">
+
                   <div className="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
                     <ApperIcon name="UserPlus" className="w-4 h-4 text-green-600 dark:text-green-400" />
                   </div>
@@ -546,7 +561,8 @@ const MainFeature = ({ activeTab }) => {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3 p-3 bg-surface-50 dark:bg-surface-700 rounded-lg">
+                <div className="flex items-center space-x-3 p-2 bg-surface-50 dark:bg-surface-700 rounded-lg">
+
                   <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center">
                     <ApperIcon name="Wrench" className="w-4 h-4 text-orange-600 dark:text-orange-400" />
                   </div>
@@ -558,7 +574,8 @@ const MainFeature = ({ activeTab }) => {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3 p-3 bg-surface-50 dark:bg-surface-700 rounded-lg">
+                <div className="flex items-center space-x-3 p-2 bg-surface-50 dark:bg-surface-700 rounded-lg">
+
                   <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
                     <ApperIcon name="DollarSign" className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                   </div>
@@ -573,15 +590,19 @@ const MainFeature = ({ activeTab }) => {
             </div>
 
             {/* Quick Actions */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+
               <button
                 onClick={() => openModal('property')}
-                className="card p-6 hover:shadow-lg transition-all text-left group"
+                className="card p-4 hover:shadow-lg transition-all text-left group"
+
               >
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+
                   <ApperIcon name="Building" className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
-                <h3 className="font-semibold text-surface-900 dark:text-white mb-2">Add Property</h3>
+                <h3 className="font-semibold text-surface-900 dark:text-white mb-1">Add Property</h3>
+
                 <p className="text-sm text-surface-600 dark:text-surface-400">
                   Add a new property to your portfolio
                 </p>
@@ -589,12 +610,15 @@ const MainFeature = ({ activeTab }) => {
               
               <button
                 onClick={() => openModal('tenant')}
-                className="card p-6 hover:shadow-lg transition-all text-left group"
+                className="card p-4 hover:shadow-lg transition-all text-left group"
+
               >
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+
                   <ApperIcon name="UserPlus" className="w-6 h-6 text-green-600 dark:text-green-400" />
                 </div>
-                <h3 className="font-semibold text-surface-900 dark:text-white mb-2">Add Tenant</h3>
+                <h3 className="font-semibold text-surface-900 dark:text-white mb-1">Add Tenant</h3>
+
                 <p className="text-sm text-surface-600 dark:text-surface-400">
                   Register a new tenant
                 </p>
@@ -602,12 +626,15 @@ const MainFeature = ({ activeTab }) => {
               
               <button
                 onClick={() => openModal('maintenance')}
-                className="card p-6 hover:shadow-lg transition-all text-left group"
+                className="card p-4 hover:shadow-lg transition-all text-left group"
+
               >
-                <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+
                   <ApperIcon name="Wrench" className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                 </div>
-                <h3 className="font-semibold text-surface-900 dark:text-white mb-2">Create Request</h3>
+                <h3 className="font-semibold text-surface-900 dark:text-white mb-1">Create Request</h3>
+
                 <p className="text-sm text-surface-600 dark:text-surface-400">
                   Submit maintenance request
                 </p>
@@ -619,20 +646,24 @@ const MainFeature = ({ activeTab }) => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
+
       {renderContent()}
 
       {/* Modal */}
       <AnimatePresence>
         {showModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-3 z-50">
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               className="bg-white dark:bg-surface-800 rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+
             >
-              <div className="p-6 border-b border-surface-200 dark:border-surface-700">
+              <div className="p-4 border-b border-surface-200 dark:border-surface-700">
+
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-semibold text-surface-900 dark:text-white">
                     {editingItem ? 'Edit' : 'Add'} {modalType.charAt(0).toUpperCase() + modalType.slice(1)}
@@ -646,7 +677,8 @@ const MainFeature = ({ activeTab }) => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="p-6 space-y-4">
+              <form onSubmit={handleSubmit} className="p-4 space-y-3">
+
                 {modalType === 'property' && (
                   <>
                     <div>

@@ -23,7 +23,8 @@ const Home = ({ darkMode, toggleDarkMode }) => {
   ]
 
   return (
-    <div className="min-h-screen content-gradient">
+    <div className="flex min-h-screen content-gradient">
+
 
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
@@ -40,10 +41,11 @@ const Home = ({ darkMode, toggleDarkMode }) => {
       <motion.aside
         initial={false}
         animate={{ x: sidebarOpen ? 0 : '-100%' }}
-        className="fixed top-0 left-0 z-50 w-72 h-full glass-strong lg:shadow-card lg:translate-x-0 lg:static lg:z-auto transition-all duration-300"
-
+        className="fixed top-0 left-0 z-50 w-64 h-full glass-strong lg:relative lg:translate-x-0 lg:z-auto transition-all duration-300"
       >
-        <div className="flex items-center justify-between p-6 border-b border-surface-200 dark:border-surface-700">
+
+        <div className="flex items-center justify-between p-4 border-b border-surface-200 dark:border-surface-700">
+
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
               <ApperIcon name="Building2" className="w-6 h-6 text-white" />
@@ -61,7 +63,8 @@ const Home = ({ darkMode, toggleDarkMode }) => {
           </button>
         </div>
 
-        <nav className="p-4 space-y-2">
+        <nav className="p-3 space-y-1">
+
           {navigationItems.map((item) => (
             <button
               key={item.id}
@@ -79,10 +82,12 @@ const Home = ({ darkMode, toggleDarkMode }) => {
           ))}
         </nav>
 
-        <div className="absolute bottom-4 left-4 right-4">
+        <div className="absolute bottom-3 left-3 right-3">
+
           <button
             onClick={toggleDarkMode}
-            className="w-full flex items-center justify-center space-x-2 p-3 bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 rounded-lg transition-colors"
+            className="w-full flex items-center justify-center space-x-2 p-2 bg-surface-100 dark:bg-surface-700 hover:bg-surface-200 dark:hover:bg-surface-600 rounded-lg transition-colors"
+
           >
             <ApperIcon name={darkMode ? 'Sun' : 'Moon'} className="w-5 h-5" />
             <span className="text-sm font-medium">
@@ -93,57 +98,29 @@ const Home = ({ darkMode, toggleDarkMode }) => {
       </motion.aside>
 
       {/* Main Content */}
-      <div className="lg:ml-72 min-h-screen">
+      <div className="flex-1 lg:ml-0 min-h-screen">
+
         {/* Header */}
         <header className="glass-strong shadow-soft border-b border-white/20 dark:border-surface-700/30 sticky top-0 z-30 backdrop-blur-xl">
+          <div className="flex items-center justify-between px-3 sm:px-4 lg:px-6 py-3">
 
-          <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className="lg:hidden p-2 hover:bg-surface-100 dark:hover:bg-surface-700 rounded-lg transition-colors"
-              >
-                <ApperIcon name="Menu" className="w-6 h-6" />
-              </button>
-              <div>
-                <h2 className="text-2xl font-bold text-surface-900 dark:text-white capitalize">
-                  {activeTab}
-                </h2>
-                <p className="text-sm text-surface-500">
-                  {activeTab === 'dashboard' && 'Overview of your property portfolio'}
-                  {activeTab === 'properties' && 'Manage your property listings'}
-                  {activeTab === 'tenants' && 'Track tenant information and leases'}
-                  {activeTab === 'maintenance' && 'Handle maintenance requests and work orders'}
-                  {activeTab === 'leases' && 'Manage lease agreements and renewals'}
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <button className="p-2 hover:bg-surface-100 dark:hover:bg-surface-700 rounded-lg transition-colors relative">
-                <ApperIcon name="Bell" className="w-6 h-6 text-surface-600 dark:text-surface-300" />
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
-              </button>
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                <ApperIcon name="User" className="w-5 h-5 text-white" />
-              </div>
-            </div>
-          </div>
         </header>
 
         {/* Dashboard Stats */}
         {activeTab === 'dashboard' && (
-          <div className="p-4 sm:p-6 lg:p-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+          <div className="p-3 sm:p-4 lg:p-6">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
+
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="card hover-lift p-6 hover:shadow-card-hover transition-all duration-300 group"
-
+                  className="card hover-lift p-4 hover:shadow-card-hover transition-all duration-300 group"
                 >
+
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm font-medium text-surface-600 dark:text-surface-400">
@@ -170,11 +147,13 @@ const Home = ({ darkMode, toggleDarkMode }) => {
         )}
 
         {/* Main Feature Component */}
-        <div className="p-4 sm:p-6 lg:p-8">
+        <div className="p-3 sm:p-4 lg:p-6">
+
           <MainFeature activeTab={activeTab} />
         </div>
       </div>
     </div>
+
   )
 }
 
